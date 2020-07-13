@@ -1,0 +1,50 @@
+html, body {
+    margin: 0;
+}
+
+.header {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+
+    height: 10vh;
+
+    font-family: "Andale Mono";
+    background: grey;
+}
+
+.grid-container {
+    margin-top: 15vh;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-content: center;
+
+    
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    background: rgb(52, 25, 1);
+    border: 2px solid black;
+    padding: 10px;
+  }
+  .grid-block {
+    background-color: beige;
+    border: 1px solid rgb(70, 39, 11);
+    padding: 40px;
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .grid-block:hover {
+    background-color: saddlebrown;
+    cursor: pointer;
+  }
+
+  .x {
+    background-attachment: fixed;
+  }
