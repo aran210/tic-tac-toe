@@ -2,6 +2,7 @@ html, body {
     margin: 0;
 }
 
+
 .header {
     display: flex;
     flex-flow: row wrap;
@@ -14,8 +15,48 @@ html, body {
     background: grey;
 }
 
+.starter-container {
+
+  display: flex;
+  flex-flow: row wrap;
+
+  justify-content: center;
+  /* align-content: center; */
+
+  height:10em;
+  border: 1px solid red;
+}
+
+h2 {
+  font-family: "Avenir Next";
+  font-weight: normal;
+
+}
+
+.choose-starter-button {
+  font-family: "Avenir Next";
+  font-size: 1em;
+
+  align-self: center;
+
+  margin: 10px;
+  padding: 10px;
+  width: 10em;
+  height: 3rem;
+  border-radius: 20px;
+
+  color: burlywood;
+
+  border: 2px solid burlywood;
+  background: saddlebrown;
+}
+
+.choose-starter-button:hover {
+  background: goldenrod;
+}
+
 .grid-container {
-    margin-top: 15vh;
+    /* margin-top: 15vh; */
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
@@ -48,3 +89,4 @@ html, body {
   .x {
     background-attachment: fixed;
   }
+
