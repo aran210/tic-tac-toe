@@ -66,7 +66,7 @@ h2 {
 }
 
 .grid-container {
-    /* margin-top: 15vh; */
+    margin-top: 15vh;
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
@@ -86,18 +86,21 @@ h2 {
   .grid-block {
     background-color: beige;
     border: 1px solid rgb(70, 39, 11);
-    padding: 40px;
-    font-size: 30px;
+    height: 6rem;
+    width: 6rem;
+
+    padding: 0;
+    
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    font-size: 7rem;
     text-align: center;
+    line-height: 6rem;
   }
 
   .grid-block:hover {
     background-color: saddlebrown;
     cursor: pointer;
-  }
-
-  .x {
-    background-attachment: fixed;
   }
 
 .hide {
