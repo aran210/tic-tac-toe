@@ -1,5 +1,8 @@
 html, body {
     margin: 0;
+    font-family: "Avenir Next";
+
+    background: beige;
 }
 
 
@@ -12,8 +15,27 @@ html, body {
     height: 10vh;
 
     font-family: "Andale Mono";
-    background: grey;
+    /* background: linear-gradient(to right, rgb(155, 131, 13), rgb(61, 30, 0)); */
 }
+
+#score-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+
+  font-size: 1rem;
+}
+
+span {
+  display: block;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.score {
+  margin: 2rem;
+}
+
 
 .who-starts {
   display: flex;
@@ -38,16 +60,16 @@ html, body {
 
 h2 {
   display: block;
-  font-family: "Avenir Next";
   font-weight: normal;
 
 }
 
 .choose-starter-button {
-  font-family: "Avenir Next";
   font-size: 1em;
 
   align-self: center;
+
+  cursor: pointer;
 
   margin: 10px;
   padding: 10px;
@@ -63,19 +85,22 @@ h2 {
 
 .choose-starter-button:hover {
   background: goldenrod;
+  color: saddlebrown;
 }
 
 .grid-container {
-    margin-top: 15vh;
     display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-content: center;
+    flex-flow: column wrap;
+    /* justify-content: center;
+    align-content: center; */
 
     
 }
 
 .grid {
+    justify-self: center;
+    align-self: center;
+
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 
@@ -84,7 +109,7 @@ h2 {
     padding: 10px;
   }
   .grid-block {
-    background-color: beige;
+    background: beige;
     border: 1px solid rgb(70, 39, 11);
     height: 6rem;
     width: 6rem;
@@ -101,6 +126,33 @@ h2 {
   .grid-block:hover {
     background-color: saddlebrown;
     cursor: pointer;
+  }
+
+  .reset-container {
+    justify-self: center;
+    align-self: center;
+  }
+
+  .reset-button {
+    font-size: 0.7em;
+
+    cursor: pointer;
+
+    margin: 10px;
+    padding: 10px;
+    width: auto;
+    height: auto;
+    border-radius: 20px;
+
+    color: burlywood;
+
+    border: 2px solid burlywood;
+    background: saddlebrown;
+  }
+
+  .reset-button:hover {
+    background: goldenrod;
+    color: saddlebrown;
   }
 
 .hide {
