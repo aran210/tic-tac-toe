@@ -76,15 +76,15 @@ h2 {
   height: 3rem;
   border-radius: 100%;
 
-  color: burlywood;
+  color: #deb887;
 
-  border: 2px solid burlywood;
-  background: saddlebrown;
+  border: 2px solid #deb887;
+  background: #8b4513;
 }
 
 .choose-starter-button:hover {
   background: goldenrod;
-  color: saddlebrown;
+  color: #8b4513;
 }
 
 .grid-container {
@@ -143,15 +143,15 @@ h2 {
     height: auto;
     border-radius: 20px;
 
-    color: burlywood;
+    color: #deb887;
 
-    border: 2px solid burlywood;
-    background: saddlebrown;
+    border: 2px solid #deb887;
+    background: #8b4513;
   }
 
   .reset-button:hover {
-    background: goldenrod;
-    color: saddlebrown;
+    background: #daa520;
+    color: #8b4513;
   }
 
 .hide {
