@@ -100,3 +100,6 @@ h2 {
     background-attachment: fixed;
   }
 
+.hide {
+  display: none;
+}

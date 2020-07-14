@@ -2,12 +2,10 @@ let playerX = [];
 let playerO = [];
 let playerXScore = 0;
 let playerOScore = 0;
-
-const grid = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9]
-];
+let startingPlayer = '';
+const xStart = document.getElementById("xStart");
+const oStart = document.getElementById("oStart");
+const grid = document.getElementsByClassName("grid")[0];
 
 // column wins = difference of 3
 // row wins = difference of 1
@@ -24,6 +22,10 @@ const oSelect = (event) => {
     playerO.push(id);
 }
 
+const selectStartingPlayer = (event) => {
+    event.target.id === "xStart" ? startingPlayer = "X" : startingPlayer = "O";
+    grid.classList.remove("hide");
+}
 
-addEventListener("click", xSelect);
-addEventListener("click", oSelect);
+xStart.addEventListener("click", selectStartingPlayer);
+oStart.addEventListener("click", selectStartingPlayer);
