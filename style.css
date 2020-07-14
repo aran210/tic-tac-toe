@@ -7,15 +7,15 @@ html, body {
 }
 
 
-.header {
+h1 {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     align-content: center;
 
-    /* height: 10vh; */
+    font-weight: normal;
 
-    font-family: "Andale Mono";
+    /* height: 10vh; */
 }
 
 #score-container {
