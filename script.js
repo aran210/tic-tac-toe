@@ -2,10 +2,14 @@ let playerX = [];
 let playerO = [];
 let xCount = 0;
 let oCount = 0;
+let tieCount = 0;
 let turn = '';
 let turnCount = 0;
+
 const xScore = document.getElementById("xScore");
 const oScore = document.getElementById("oScore");
+const tie = document.getElementById("tieScore");
+
 const xStart = document.getElementById("xStart");
 const oStart = document.getElementById("oStart");
 
@@ -121,6 +125,7 @@ const nextTurn = () => turn==="X" ? turn="O" : turn="X";
 
 const gameOver = (outcome="Tie!") => {
     alert(`Game Over! ${outcome}`);
+    outcome==="Tie!" ? tie.innerHTML = ++tieCount : null;
     resetBoard();
 }
 
@@ -139,6 +144,7 @@ const resetBoard = () => {
 
     grid.classList.add("hide");
     startingInfo.classList.remove("hide");
+    resetContainer.firstElementChild.classList.add("hide");
 }
 
 const refresh = () => {
