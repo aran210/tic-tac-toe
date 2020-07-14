@@ -10,6 +10,10 @@
     <header class="header">
         <h1>Tic-Tac-Toe</h1>
     </header>
+    <div id="score-container">
+        <p class="score">Player X Score: <span id="xScore">0</span> </p>
+        <p class="score">Player O Score: <span id="oScore">0</span> </p>
+    </div>
     <div id="choose-starter">
         <div class="who-starts">
             <h2>Who starts?</h2>
@@ -19,8 +23,8 @@
             <input type="button" value="O" class="choose-starter-button" id="oStart">
         </div>
     </div>
-    <div class="grid-container hide">
-        <div class="grid">
+    <div class="grid-container">
+        <div class="grid hide">
             <div class="grid-block free" id="1"></div>
             <div class="grid-block free" id="2"></div>
             <div class="grid-block free" id="3"></div>
@@ -30,6 +34,10 @@
             <div class="grid-block free" id="7"></div>
             <div class="grid-block free" id="8"></div>
             <div class="grid-block free" id="9"></div>
+        </div>
+        <div class="reset-container hide">
+            <input type="button" class="reset-button" id="reset-round" value="Reset Round">
+            <input type="button" class="reset-button" id="reset-game" value="Reset Whole Game">
         </div>
     </div>
     <script src="script.js"></script>

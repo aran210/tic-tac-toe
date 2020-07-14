@@ -1,16 +1,28 @@
 let playerX = [];
 let playerO = [];
+let xCount = 0;
+let oCount = 0;
 let turn = '';
 let turnCount = 0;
+const xScore = document.getElementById("xScore");
+const oScore = document.getElementById("oScore");
 const xStart = document.getElementById("xStart");
 const oStart = document.getElementById("oStart");
-const grid = document.getElementsByClassName("grid-container")[0];
+
+const grid = document.getElementsByClassName("grid")[0];
 const startingInfo = document.getElementById("choose-starter");
+const resetContainer = document.getElementsByClassName("reset-container ")[0];
+
+const resetRound = document.getElementById("reset-round");
+const resetGame = document.getElementById("reset-game");
 
 const selectStartingPlayer = (event) => {
     event.target.id === "xStart" ? turn = "X" : turn = "O";
+
     grid.classList.remove("hide");
+    resetContainer.classList.remove("hide");
     startingInfo.classList.add("hide");
+    
     turnCount = 0
     console.log(`${turn} starts.`);
 }
@@ -43,8 +55,16 @@ const checkWinner = () => {
     const didPlayerOWin = checkRow(playerO) || checkCol(playerO) || checkDiag(playerO);
     console.log("X champ:", didPlayerXWin);
     console.log("O champ:", didPlayerOWin);
-    if (didPlayerXWin) gameOver("X Wins!");
-    if (didPlayerOWin) gameOver("O Wins!");
+    if (didPlayerXWin) {
+        gameOver("X Wins!");
+        xCount++;
+        xScore.innerHTML = xCount;
+    }
+    if (didPlayerOWin) {
+        gameOver("O Wins!");
+        oCount++;
+        oScore.innerHTML = oCount;
+    }
 }
 
 const checkRow = (player) =>  {
@@ -121,7 +141,14 @@ const resetBoard = () => {
     startingInfo.classList.remove("hide");
 }
 
+const refresh = () => {
+    location.reload();
+}
+
+
 
 xStart.addEventListener("click", selectStartingPlayer);
 oStart.addEventListener("click", selectStartingPlayer);
 grid.addEventListener("click", selectSquare);
+resetRound.addEventListener("click", resetBoard);
+resetGame.addEventListener("click", refresh);
