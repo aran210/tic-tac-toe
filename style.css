@@ -15,7 +15,16 @@ html, body {
     background: grey;
 }
 
-.starter-container {
+.who-starts {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+
+
+}
+
+.choose-starter-container {
+  margin-bottom: 2em;
 
   display: flex;
   flex-flow: row wrap;
@@ -23,11 +32,12 @@ html, body {
   justify-content: center;
   /* align-content: center; */
 
-  height:10em;
-  border: 1px solid red;
+  height: auto;
+  /* border: 1px solid red; */
 }
 
 h2 {
+  display: block;
   font-family: "Avenir Next";
   font-weight: normal;
 
@@ -41,9 +51,9 @@ h2 {
 
   margin: 10px;
   padding: 10px;
-  width: 10em;
+  width: 3em;
   height: 3rem;
-  border-radius: 20px;
+  border-radius: 100%;
 
   color: burlywood;
 

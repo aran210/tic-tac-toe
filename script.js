@@ -7,7 +7,7 @@ const grid = [
     [1, 2, 3],
     [4, 5, 6],
     [7, 8, 9]
-]
+];
 
 // column wins = difference of 3
 // row wins = difference of 1
