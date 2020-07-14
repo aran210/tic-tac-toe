@@ -1,7 +1,7 @@
 html, body {
     margin: 0;
     margin-top: 0.5vh;
-    font-family: "Avenir Next";
+    font-family: "Avenir Next", Arial, Helvetica, sans-serif;
 
     background: beige;
 }
