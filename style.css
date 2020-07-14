@@ -1,6 +1,6 @@
 html, body {
     margin: 0;
-    margin-top: 10px;
+    margin-top: 0.5vh;
     font-family: "Avenir Next";
 
     background: beige;
@@ -13,10 +13,9 @@ html, body {
     justify-content: center;
     align-content: center;
 
-    height: 10vh;
+    /* height: 10vh; */
 
     font-family: "Andale Mono";
-    /* background: linear-gradient(to right, rgb(155, 131, 13), rgb(61, 30, 0)); */
 }
 
 #score-container {
@@ -166,4 +165,15 @@ h2 {
 
 .loser {
   background-color: brown;
+}
+
+@media only screen and (max-width: 500px) {
+  #score-container, #score-container *  {
+    padding: 0;
+    font-size: 0.5rem;
+  }
+  body {
+    transform: scale(0.8);
+  }
+
 }

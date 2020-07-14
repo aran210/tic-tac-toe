@@ -45,7 +45,11 @@ const selectSquare = (event) => {
         console.log(turnCount);
     }
     else {
-        alert("Square already taken, pick another.")
+        swal("Oops!", "Square already taken, pick another.", "error", {
+            closeOnClickOutside: false,
+            buttons: false,
+            timer: 1500
+        });
     }
 }
 
@@ -124,8 +128,21 @@ const checkDiag = (player) =>  {
 const nextTurn = () => turn==="X" ? turn="O" : turn="X";
 
 const gameOver = (outcome="Tie!") => {
-    alert(`Game Over! ${outcome}`);
-    outcome==="Tie!" ? tie.innerHTML = ++tieCount : null;
+
+    if (outcome === "Tie!") {
+        swal(`Game Over!`, `${outcome}`, 'warning', {
+            closeOnClickOutside: false,
+            buttons: false,
+            timer: 1500,
+        });
+        tie.innerHTML = ++tieCount
+    } else {
+        swal(`Game Over!`, `${outcome}`, 'success', {
+            closeOnClickOutside: false,
+            buttons: false,
+            timer: 1500,
+        });
+    }
     resetBoard();
 }
 

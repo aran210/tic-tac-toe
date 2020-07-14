@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/aran210/tic-tac-toe/issues"
   },
-  "homepage": "https://github.com/aran210/tic-tac-toe#readme"
+  "homepage": "https://github.com/aran210/tic-tac-toe#readme",
+  "dependencies": {
+    "sweetalert": "^2.1.2"
+  }
 }
