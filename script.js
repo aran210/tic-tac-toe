@@ -20,13 +20,16 @@ const resetContainer = document.getElementsByClassName("reset-container ")[0];
 const resetRound = document.getElementById("reset-round");
 const resetGame = document.getElementById("reset-game");
 
+const toggleVisibility = () => {
+    grid.classList.toggle("hide"); // r -> a
+    resetContainer.classList.toggle("hide"); // r -> a
+    startingInfo.classList.toggle("hide"); // a -> r
+}
+
 const selectStartingPlayer = (event) => {
     event.target.id === "xStart" ? turn = "X" : turn = "O";
 
-    grid.classList.remove("hide");
-    resetContainer.classList.remove("hide");
-    resetRound.classList.remove("hide");
-    startingInfo.classList.add("hide");
+    toggleVisibility();
     
     turnCount = 0
     console.log(`${turn} starts.`);
@@ -160,9 +163,8 @@ const resetBoard = () => {
     turn = '';
     turnCount = 0;
 
-    grid.classList.add("hide");
-    startingInfo.classList.remove("hide");
-    resetRound.classList.add("hide");
+    toggleVisibility();
+    
 }
 
 const refresh = () => {
