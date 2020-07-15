@@ -25,6 +25,7 @@ const selectStartingPlayer = (event) => {
 
     grid.classList.remove("hide");
     resetContainer.classList.remove("hide");
+    resetRound.classList.remove("hide");
     startingInfo.classList.add("hide");
     
     turnCount = 0
@@ -161,7 +162,7 @@ const resetBoard = () => {
 
     grid.classList.add("hide");
     startingInfo.classList.remove("hide");
-    resetContainer.firstElementChild.classList.add("hide");
+    resetRound.classList.add("hide");
 }
 
 const refresh = () => {
