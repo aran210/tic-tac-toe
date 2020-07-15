@@ -20,13 +20,16 @@ const resetContainer = document.getElementsByClassName("reset-container ")[0];
 const resetRound = document.getElementById("reset-round");
 const resetGame = document.getElementById("reset-game");
 
+const toggleVisibility = () => {
+    grid.classList.toggle("hide");
+    resetContainer.classList.toggle("hide");
+    startingInfo.classList.toggle("hide");
+}
+
 const selectStartingPlayer = (event) => {
     event.target.id === "xStart" ? turn = "X" : turn = "O";
 
-    grid.classList.remove("hide");
-    resetContainer.classList.remove("hide");
-    resetRound.classList.remove("hide");
-    startingInfo.classList.add("hide");
+    toggleVisibility();
     
     turnCount = 0
     console.log(`${turn} starts.`);
@@ -77,47 +80,23 @@ const checkWinner = () => {
 }
 
 const checkRow = (player) =>  {
-    let a = 0, b = 0, c = 0;
-    for (var i = 0; i < player.length; i++) {
-        player[i] === 1 ? a++ : null;
-        player[i] === 2 ? a++ : null;
-        player[i] === 3 ? a++ : null;
-        player[i] === 4 ? b++ : null;
-        player[i] === 5 ? b++ : null;
-        player[i] === 6 ? b++ : null;
-        player[i] === 7 ? c++ : null;
-        player[i] === 8 ? c++ : null;
-        player[i] === 9 ? c++ : null;
-    }
-    return (a===3 || b===3 || c===3);
+    const r1 = player.filter( el => el <= 3);
+    const r2 = player.filter( el => el > 3 && el <= 6);
+    const r3 = player.filter( el => el > 6 && el <= 9);
+    return (r1.length===3 || r2.length===3 || r3.length===3);
 }
 
 const checkCol = (player) =>  {
-    let a = 0, b = 0, c = 0;
-    for (var i = 0; i < player.length; i++) {
-        player[i] === 1 ? a++ : null;
-        player[i] === 2 ? b++ : null;
-        player[i] === 3 ? c++ : null;
-        player[i] === 4 ? a++ : null;
-        player[i] === 5 ? b++ : null;
-        player[i] === 6 ? c++ : null;
-        player[i] === 7 ? a++ : null;
-        player[i] === 8 ? b++ : null;
-        player[i] === 9 ? c++ : null;
-    }
-    return (a===3 || b===3 || c===3);
+    const c1 = player.filter(val => val===1 || val===4 || val===7);
+    const c2 = player.filter(val => val===2 || val===5 || val===8);
+    const c3 = player.filter(val => val===3 || val===6 || val===9);
+    return c1.length===3 || c2.length===3 || c3.length===3; 
 }
 
 const checkDiag = (player) =>  {
-    let a = 0, b = 0, c = 0;
-    for (var i = 0; i < player.length; i++) {
-        player[i] === 1 ? a++ : null;
-        player[i] === 3 ? b++ : null;
-        player[i] === 5 ? (a++, b++) : null;
-        player[i] === 7 ? b++ : null;
-        player[i] === 9 ? a++ : null;
-    }
-    return (a===3 || b===3);
+    const d1 = player.filter(val => val===1 || val===5 || val===9);
+    const d2 = player.filter(val => val===3 || val===5 || val===7);
+    return d1.length===3 || d2.length===3; 
 }
 
 // const checkRow = (player) => player.includes((1 && 2 && 3) || (4 && 5 && 6) || (7 && 8 && 9));
@@ -160,14 +139,11 @@ const resetBoard = () => {
     turn = '';
     turnCount = 0;
 
-    grid.classList.add("hide");
-    startingInfo.classList.remove("hide");
-    resetRound.classList.add("hide");
+    toggleVisibility();
+    
 }
 
-const refresh = () => {
-    location.reload();
-}
+const refresh = () => location.reload();
 
 
 
