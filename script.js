@@ -99,12 +99,6 @@ const checkDiag = (player) =>  {
     return d1.length===3 || d2.length===3; 
 }
 
-// const checkRow = (player) => player.includes((1 && 2 && 3) || (4 && 5 && 6) || (7 && 8 && 9));
-
-// const checkCol = (player) => player.includes((1 && 4 && 7) || (2 && 5 && 8) || (3 && 6 && 9));
-
-// const checkDiag = (player) => player.includes((1 && 5 && 9) || (3 && 5 && 7));
-
 const nextTurn = () => turn==="X" ? turn="O" : turn="X";
 
 const gameOver = (outcome="Tie!") => {
@@ -152,3 +146,9 @@ oStart.addEventListener("click", selectStartingPlayer);
 grid.addEventListener("click", selectSquare);
 resetRound.addEventListener("click", resetBoard);
 resetGame.addEventListener("click", refresh);
+
+
+// didn't work:
+// const checkRow = (player) => player.includes((1 && 2 && 3) || (4 && 5 && 6) || (7 && 8 && 9));
+// const checkCol = (player) => player.includes((1 && 4 && 7) || (2 && 5 && 8) || (3 && 6 && 9));
+// const checkDiag = (player) => player.includes((1 && 5 && 9) || (3 && 5 && 7));
